@@ -33,10 +33,7 @@ const theme = useSelector((state) => state.theme.mode);
       <Routes>
        
         <Route path="/" element={<MainLayout />}>
-         
           <Route index element={<Home />} />
-
-     
           <Route path="products" element={<Products />} />
           <Route path="category" element={<Category/>} />
           <Route path="productdetails/:id" element={<ProductDetails />} />
