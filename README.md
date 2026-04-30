@@ -48,7 +48,6 @@ Used for:
   Theme (light/dark)
   Global state handling
 
-
 🧱 5. Outlet (Child Routing)
 
 Used Outlet for layout-based routing:
@@ -82,7 +81,6 @@ Filtering logic applied using Redux selectors.
 
 
 ⚠️ 8. Error Handling
-
 Handled using:
 
 Try/catch blocks
