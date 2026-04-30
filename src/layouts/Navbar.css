@@ -1,0 +1,50 @@
+.navbar-custom {
+  background: #ffffff;
+}
+.nav-item .nav-link{
+color: #103559 !important;
+font-family: 'Gilroy-Medium', sans-serif !important;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.card-info {
+  font-size: 13px;
+  color: #777;
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.card-price {
+  font-weight: bold;
+  color: #000;
+}
+

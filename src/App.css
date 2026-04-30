@@ -1,0 +1,18 @@
+.Toastify__toast-container{
+    z-index: 9999999999999999999;
+}
+
+:root {
+  --bg: #ffffff;
+  --text: #000000 !important;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --text: #ffffff !important;
+}
+
+body {
+  background: var(--bg)!important;;
+  color: var(--text);
+}
