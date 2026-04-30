@@ -80,8 +80,6 @@ const Header = () => {
                   placeholder="Search something here!"
                   style={{ width: "250px" }}
                 />
-
-                {/* ❌ Clear button */}
                 {search && (
                   <span
                     onClick={handleClear}
@@ -93,7 +91,6 @@ const Header = () => {
                 )}
               </div>
 
-              {/* Button */}
               <button
                 className="btn rounded-pill px-4 text-white"
                 style={{ backgroundColor: "#0B3C5D" }}
@@ -101,7 +98,6 @@ const Header = () => {
                 Join the community
               </button>
 
-              {/* 🛒 Cart */}
               <Link to="/cart" className="position-relative text-dark">
                 <i className="bi bi-cart fs-4"></i>
                 <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
