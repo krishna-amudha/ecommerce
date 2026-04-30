@@ -21,31 +21,29 @@ const theme = useSelector((state) => state.theme.mode);
   document.body.setAttribute("data-theme", theme);
 }, [theme]);
    
-  return (
-    
-    <BrowserRouter>
+ return (
+  <BrowserRouter basename="/ecommerce">
     <ToastContainer
-  position="top-center"
-  autoClose={2000}
-  hideProgressBar
-  theme="light"
-/>
-      <Routes>
-       
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
-          <Route path="products" element={<Products />} />
-          <Route path="category" element={<Category/>} />
-          <Route path="productdetails/:id" element={<ProductDetails />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contacts />} />
-          <Route path="cart" element={<Cart />} />
-         <Route path='chekout' element={<Checkout/>} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    
-  );
+      position="top-center"
+      autoClose={2000}
+      hideProgressBar
+      theme="light"
+    />
+
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="products" element={<Products />} />
+        <Route path="category" element={<Category />} />
+        <Route path="productdetails/:id" element={<ProductDetails />} />
+        <Route path="about" element={<About />} />
+        <Route path="contact" element={<Contacts />} />
+        <Route path="cart" element={<Cart />} />
+        <Route path="chekout" element={<Checkout />} />
+      </Route>
+    </Routes>
+  </BrowserRouter>
+);
 }
 
 export default App;

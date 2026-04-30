@@ -8,12 +8,11 @@ function Category() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  const [loading, setLoading] = useState(true);     // ✅ FIXED
-  const [error, setError] = useState(null);         // ✅ FIXED
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null);         
 
   const search = useSelector((state) => state.search.value);
 
-  // ✅ FETCH DATA
   useEffect(() => {
     let isMounted = true;
 
@@ -50,18 +49,15 @@ function Category() {
     };
   }, []);
 
-  // ✅ 🔥 MAIN FILTER LOGIC (FIXED SEARCH + CATEGORY)
   useEffect(() => {
     let filtered = products;
 
-    // Category filter
     if (selectedCategories.length > 0) {
       filtered = filtered.filter((p) =>
         selectedCategories.includes(p.category)
       );
     }
 
-    // 🔍 Search filter
     if (search && search.trim() !== "") {
       filtered = filtered.filter((p) =>
         p.title.toLowerCase().includes(search.toLowerCase())
@@ -69,9 +65,8 @@ function Category() {
     }
 
     setFilteredProducts(filtered);
-  }, [search, selectedCategories, products]); // ✅ IMPORTANT
+  }, [search, selectedCategories, products]); 
 
-  // ✅ Handle category checkbox
   const handleCategoryChange = (category) => {
     let updated = [...selectedCategories];
 
@@ -84,15 +79,13 @@ function Category() {
     setSelectedCategories(updated);
   };
 
-  // ✅ UI STATES
   if (loading) return <h4 className="text-center">Loading...</h4>;
   if (error) return <h4 className="text-center text-danger">{error}</h4>;
 
   return (
-    <div className="container py-4">
+    <div className="container py-5">
       <div className="row">
 
-        {/* LEFT FILTER */}
         <div className="col-md-2">
           <h5>Categories</h5>
 
@@ -100,18 +93,17 @@ function Category() {
             <div className="form-check" key={index}>
               <input
                 type="checkbox"
-                className="form-check-input"
+                className="form-check-input my-2"
                 checked={selectedCategories.includes(cat)}
                 onChange={() => handleCategoryChange(cat)}
               />
-              <label className="form-check-label">{cat}</label>
+              <label className="form-check-label my-1">{cat}</label>
             </div>
           ))}
         </div>
-
-        {/* RIGHT PRODUCTS */}
         <div className="col-md-10">
           <div className="row">
+            <p>Total Products: {filteredProducts.length}</p>
             {filteredProducts.length > 0 ? (
               filteredProducts.map((item) => (
                 <div className="col-md-3 mb-4" key={item.id}>
