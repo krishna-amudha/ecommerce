@@ -1,16 +1,138 @@
-# React + Vite
+🛒 Ecommerce React Project – Instruction Document
+🚀 1. Run the Project (Development Mode)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To start the project locally:
+npm install
+npm run dev
 
-Currently, two official plugins are available:
+👉 App will run at:
+https://krishna-amudha.github.io/ecommerce
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+⚛️ 2. Functional Components
 
-## React Compiler
+This project is built using React Functional Components only.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+No class components used
+Uses Hooks like:
+ useState
+ useEffect
+ useSelector
+ useDispatch
 
-## Expanding the ESLint configuration
+🌐 3. React Router DOM
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Routing is handled using:
+
+React Router DOM
+
+Features used:
+  Nested routes
+  Dynamic routes
+  Layout-based routing
+
+Example structure:
+
+<Route path="/" element={<MainLayout />}>
+  <Route index element={<Home />} />
+  <Route path="products" element={<Products />} />
+</Route>
+
+🧩 4. Redux State Management
+
+State management is handled using:
+
+Redux Toolkit
+
+Used for:
+  Cart management
+  Theme (light/dark)
+  Global state handling
+
+
+🧱 5. Outlet (Child Routing)
+
+Used Outlet for layout-based routing:
+
+import { Outlet } from "react-router-dom";
+
+function MainLayout() {
+  return (
+    <>
+      <Navbar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+}
+
+🔍 6. Search Filter (Topbar)
+Search bar is placed in Top Navigation
+Filters products dynamically
+Uses useState + Redux filtering logic
+
+
+📦 7. Category-wise Filtering
+Products filtered by category
+Example:
+Electronics
+Fashion
+Home appliances
+
+Filtering logic applied using Redux selectors.
+
+
+⚠️ 8. Error Handling
+
+Handled using:
+
+Try/catch blocks
+Conditional rendering
+
+Example:
+if (!products) {
+  return <p>Something went wrong</p>;
+}
+
+⏳ 9. Loading State
+
+Loading UI shown while fetching data:
+if (loading) {
+  return <h2>Loading...</h2>;
+}
+Can be improved with spinner UI.
+
+♻️ 10. Reusable Components
+
+Project uses reusable components like:
+
+ProductCard
+Button
+Navbar
+Footer
+Loader
+Input fields
+
+👉 This helps reduce code duplication and improves maintainability.
+
+
+📁 Project Structure (Recommended)
+
+src/
+│
+├── components/
+├── pages/
+├── layouts/
+├── redux/
+├── assets/
+└── App.jsx
+
+🚀 Summary
+
+This project demonstrates:
+
+React functional architecture
+Redux state management
+Router DOM nested routing
+Search & category filtering
+Reusable UI components
+Basic error + loading handling
